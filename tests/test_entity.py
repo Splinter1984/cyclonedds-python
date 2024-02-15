@@ -177,6 +177,9 @@ def test_set_listener():
     dp = DomainParticipant(0)
     dp.set_listener(Listener())
 
+def test_get_instance_handle():
+    dp = DomainParticipant(0) 
+    assert dp.instance_handle == dp.get_instance_handle()
 
 def test_listener_reassignment(manual_setup, hitpoint_factory):
     class L(Listener):
